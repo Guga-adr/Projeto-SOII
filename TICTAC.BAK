@@ -1,0 +1,29 @@
+# include <system.h>
+# include <stdio.h>
+
+PTR_DESC dtic, dtac, dmain;
+void far tic() {
+     int i = 0;
+     for(i = 0; i < 100; i++) {
+         printf("%d tic ", i+1);
+         transfer(dtic, dtac);
+         i++;
+     }
+}
+void far tac() {
+     int i = 0;
+     for(i = 0; i < 100; i++) {
+         printf("tac \t");
+         transfer(dtac, dtic);
+         i++;
+     }
+}
+
+void far main()  {
+     dtic = cria_desc();
+     dtac = cria_desc();
+     dmain = cria_desc();
+     newprocess(tic, dtic);
+     newprocess(tac, dtac);
+     transfer(dmain, dtic);
+}
