@@ -1,6 +1,9 @@
 {
   "files.associations": {
     "TICTAC.C": "cpp",
-    "ESCALA.C": "cpp"
+    "ESCALA.C": "cpp",
+    "KERNEL.C": "cpp",
+    "SYSTEM.C": "cpp",
+    "NUCLINHO.C": "cpp"
   }
 }
