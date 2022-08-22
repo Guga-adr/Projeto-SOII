@@ -161,7 +161,7 @@ void far escalonador()
   }
 }
 
-void far ativaEscalonador()
+void far ativaEscalador()
 {
   /* Cria os Descritores*/
   PTR_DESC aux_ativo = cria_desc();

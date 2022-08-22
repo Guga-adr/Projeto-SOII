@@ -37,3 +37,7 @@ void far ativaEscalador(); /*Ativa o escalonador de processos*/
 
 void far iniciaSemaforo(SEMAFORO *semaforo_usuario, int tam_semaforo); /*Inicia um semaforo*/
 
+void far downSemaforo(SEMAFORO *semaforo_usuario); /*Down do semaforo*/
+
+void far upSemaforo(SEMAFORO *semaforo_usuario); /*Up do semaforo*/
+
