@@ -26,7 +26,7 @@ typedef struct
 } SEMAFORO;
 
 PTR_BCP cabeca_fila_proc; /* Cabeca da fila de processos*/
-PTR_DESC contexto_escal;  /* Contexto do escalonador de processos*/
+PTR_DESC contexto_escal;  /* Contexto do escalador de processos*/
 
 typedef struct registradores_8086
 {
@@ -117,10 +117,10 @@ PTR_BCP retornaProxAtivo()
   return NULL;
 }
 
-void far escalonador()
+void far escalador()
 {
   /* Valores iniciais para p_est*/
-  p_est->p_origem = contexto_escal;              /* Escalonador*/
+  p_est->p_origem = contexto_escal;              /* escalador*/
   p_est->p_destino = cabeca_fila_proc->contexto; /* Próximo processo pronto a ser executado*/
   p_est->num_vetor = INTERRUPT;                  /* Bit de interrupcao (8)*/
 
@@ -153,7 +153,7 @@ void far escalonador()
         retornaDOS();
       }
 
-      /* Caso o processo exista, eh colocado na fila de execucao pelo escalonador*/
+      /* Caso o processo exista, eh colocado na fila de execucao pelo escalador*/
       p_est->p_destino = cabeca_fila_proc->contexto;
     }
 
@@ -168,9 +168,9 @@ void far ativaEscalador()
   contexto_escal = cria_desc();
 
   /* Inicia processo do escalador no descritor associado*/
-  newprocess(escalonador, contexto_escal);
+  newprocess(escalador, contexto_escal);
 
-  /* Transfere o controle atual pra o escalonador*/
+  /* Transfere o controle atual pra o escalador*/
   transfer(aux_ativo, contexto_escal);
 }
 
@@ -244,7 +244,7 @@ void far downSemaforo(SEMAFORO *semaforo_usuario)
     transfer(p_aux->contexto, cabeca_fila_proc->contexto);
   }
 
-  enable(); /* habilita interrupcoes para o escalonador*/
+  enable(); /* habilita interrupcoes para o escalador*/
 }
 
 /* Primitiva V (Uo) decrementa o valor do semafro se o processo não estiver como ativo ou não ouver processos na fila*/
@@ -279,5 +279,5 @@ void far upSemaforo(SEMAFORO *semaforo_usuario)
     p_prox->state = ativado;
   }
 
-  enable(); /* Habilita interrupcoes para o escalonador*/
+  enable(); /* Habilita interrupcoes para o escalador*/
 }

@@ -41,3 +41,4 @@ void far downSemaforo(SEMAFORO *semaforo_usuario); /*Down do semaforo*/
 
 void far upSemaforo(SEMAFORO *semaforo_usuario); /*Up do semaforo*/
 
+

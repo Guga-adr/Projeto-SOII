@@ -4,6 +4,7 @@
     "ESCALA.C": "cpp",
     "KERNEL.C": "cpp",
     "SYSTEM.C": "cpp",
-    "NUCLINHO.C": "cpp"
+    "NUCLINHO.C": "cpp",
+    "KERNEL.H": "cpp"
   }
 }
