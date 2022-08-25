@@ -5,8 +5,7 @@ PTR_DESC dtic, dtac, dmain;
 void far tic() {
      int i = 0;
      for(i = 0; i < 100; i++) {
-         printf("%d tic ", i+1);
-         i++;
+         printf("%d tic-", i+1);
          transfer(dtic, dtac);
      }
      transfer(dtic, dmain);

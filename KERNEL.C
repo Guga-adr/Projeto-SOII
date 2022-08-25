@@ -255,7 +255,7 @@ void far upSemaforo(SEMAFORO *semaforo_usuario)
   /* Condicoes da primitiva V*/
 
   /* Verifica a fila de bloqueados*/
-  if (semaforo_usuario->fila_bloqueados != NULL)
+  if (semaforo_usuario->fila_bloqueados == NULL)
   {
     /*Incrementa a variavel de semaforo*/
 

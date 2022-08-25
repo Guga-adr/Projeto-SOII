@@ -10,6 +10,6 @@ void far iniciaProcess() {
     terminaProcesso();
 }
 
-void main() {
+void far main() {
     
 }
