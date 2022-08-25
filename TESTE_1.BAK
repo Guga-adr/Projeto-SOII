@@ -62,9 +62,10 @@ void far process5() {
     terminaProcesso();
 }
 
-main() {
+void main() {
     /* Iniciando a fila de processos */
     iniciaFilaProc();
+    printf("TA INICIANDO A FILA");
 
     /* Criacao dos Processos */
     criaProcessos(process1, "P1");

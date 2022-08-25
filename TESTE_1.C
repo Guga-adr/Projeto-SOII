@@ -51,6 +51,17 @@ void far process4() {
     terminaProcesso();
 }
 
+void far process5() {
+    int i = 0;
+    while (i < MAX_TIME) {
+        printf("5\n");
+        i++;
+    }
+
+    /* Terminando o Processo...*/
+    terminaProcesso();
+}
+
 void main() {
     /* Iniciando a fila de processos */
     iniciaFilaProc();
@@ -60,8 +71,8 @@ void main() {
     criaProcessos(process2, "P2");
     criaProcessos(process3, "P3");
     criaProcessos(process4, "P4");
+    criaProcessos(process5, "P5");
 
     /* Transferindo o controle para o Escalonador */
     ativaEscalador();
-    system("pause");
 }

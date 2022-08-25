@@ -23,7 +23,7 @@ typedef struct
     PTR_BCP fila_bloqueados; /* Fila de processos bloqueados*/
 } SEMAFORO;
 
-void far iniciainiciaFilaProc(); /*Funcao para iniciar fila de processos que estao prontos para a execucao*/
+void far iniciaFilaProc(); /*Funcao para iniciar fila de processos que estao prontos para a execucao*/
 
 void far criaProcessos(void far (*p_endereco)(), char p_nome[MAX_PROCESS_NAME]); /*Aloca BCP e insere no fim da fila de processos*/
 
