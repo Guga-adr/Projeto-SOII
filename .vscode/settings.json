@@ -6,6 +6,7 @@
     "SYSTEM.C": "cpp",
     "NUCLINHO.C": "cpp",
     "KERNEL.H": "cpp",
-    "SEMAFORO.C": "cpp"
+    "SEMAFORO.C": "cpp",
+    "TESTE_1.C": "cpp"
   }
 }
